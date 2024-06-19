@@ -127,3 +127,167 @@ const resultShortestWord = shortestWord('animal', 'fruta');
 console.log(resultShortestWord);
 
 // 12 Crea una función llamada onlyEven que reciba 3 números e imprima sólo los números pares.
+/*const onlyEven = (num1, num2, num3) => {
+  [num1, num2, num3].forEach(num => {
+    if (num % 2 === 0) {
+      console.log(num);
+    }
+  });
+};
+const resultOnlyEven = onlyEven(3, 4, 6);
+console.log(resultOnlyEven);
+*/
+const cuadradoYCubo = numero => {
+  return {
+    cuadrado: Math.pow(numero, 2),
+    cubo: Math.pow(numero, 3)
+  };
+};
+
+const resultCuadradoYCubo = cuadradoYCubo(6);
+console.log(resultCuadradoYCubo);
+
+const imprimirLetrasSeparadas = palabra => {
+  if (palabra.length === 5) {
+    console.log(palabra.split('').join(','));
+  } else {
+    console.log('La palabra no tiene 5 letras');
+  }
+};
+
+const resultLetrasSeparadas = imprimirLetrasSeparadas('Letra');
+console.log(resultLetrasSeparadas);
+
+const duplicarArray = array => {
+  if (array.length === 3) {
+    console.log([...array, ...array]);
+  } else {
+    console.log('El array no tiene 3 elementos');
+  }
+};
+
+const resultDublicarArray = duplicarArray(123);
+console.log(resultDublicarArray);
+
+const imprimirSinPrimerUltimo = array => {
+  if (array.length === 5) {
+    console.log(array.slice(1, -1));
+  } else {
+    console.log('El array no tiene 5 elementos');
+  }
+};
+
+//Objeto
+
+const user = {
+  name: 'Elena', //propiedad
+  age: 20, //propiedad
+  address: {
+    //propiedad
+    city: 'Madrid' //propiedad
+  }
+};
+console.log(user.name);
+console.log(user.age);
+console.log(user.address.city);
+
+//clave:valor -> key: value
+//
+
+//Callback -> función que ejecuta otra función
+
+const printData = data => {
+  console.log(data);
+};
+
+/*const doubleNumber = (number, cb) => {
+  const double = number * 2;
+  cb(double);
+};
+doubleNumber(4, printData);
+*/
+
+//forEach
+
+const letters = ['a', 'b', 'c', 'd'];
+
+letters.forEach(letter => {
+  console.log(letter.toUpperCase());
+});
+//IMPERATIVA - le decimos al programa paso a paso lo que tiene que hacer
+
+//DECLARATIVA - Le decimos al programa el resultado que esperamos. Cómo llega el programa al resultado nos da igual.
+
+const lettersUpperFoeEach = letters.forEach(letter => {
+  return letter.toUpperCase();
+});
+
+//MAP
+
+letters.map(letter => {
+  console.log(letter);
+});
+
+const lettersUpperMap = letters.map(letter => {
+  return letter.toUpperCase();
+});
+console.log(lettersUpperMap);
+
+const numbers = [1, 2, 3, 4, 5];
+
+const doubleNumbers = numbers.map(number => {
+  return number * 2;
+});
+console.log(doubleNumbers);
+
+//FILTER
+
+const onlyEven = numbers.filter(number => {
+  return number % 2 === 0;
+  // debajo del "return" no se va a ejecutar
+});
+
+console.log(onlyEven);
+
+//EVERY
+
+const areAllEven = numbers.every(number => {
+  return number > 0;
+});
+
+console.log(areAllEven);
+
+//SOME
+
+const areSomeEven = numbers.some(number => {
+  return number % 2 === 0;
+});
+console.log(areSomeEven);
+
+//FIND
+
+const findElement = numbers.find(number => {
+  return number > 2;
+});
+console.log(findElement);
+
+//SORT
+
+//REDUCE
+//(el 1 es igual que el 2 pero el 2 es más pequeño)
+
+//1.
+
+//let total = 0;
+// for (const number of numbers) {
+//   total += number;
+// }
+
+// console.log(total);
+
+//2.
+const totalReduce = numbers.reduce((total, number) => {
+  return (total += number);
+});
+
+console.log(totalReduce);
