@@ -214,6 +214,7 @@ const letters = ['a', 'b', 'c', 'd'];
 letters.forEach(letter => {
   console.log(letter.toUpperCase());
 });
+
 //IMPERATIVA - le decimos al programa paso a paso lo que tiene que hacer
 
 //DECLARATIVA - Le decimos al programa el resultado que esperamos. Cómo llega el programa al resultado nos da igual.
